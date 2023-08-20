@@ -1,0 +1,11 @@
+.hero_banner_cont {
+  height: 600px;
+  margin-top: 20px;
+}
+.hero_banner_cont img {
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  /* object-fit: cover; */
+}
