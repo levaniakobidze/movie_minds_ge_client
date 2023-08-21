@@ -1,5 +1,5 @@
 .header {
-  padding: 15px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,6 +38,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
+  transition: all 0.3s;
+}
+.menu li a:hover {
+  color: #4b6bfb;
 }
 .right_cont {
   display: flex;
