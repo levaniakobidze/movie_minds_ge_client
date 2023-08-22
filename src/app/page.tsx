@@ -10,7 +10,7 @@ export default function Home() {
   console.log(reviews);
   return (
     <main className={styles.main}>
-      <HeroBanner />
+      <HeroBanner img="https://images3.alphacoders.com/993/thumbbig-99309.webp" />
       <div
         style={{
           marginTop: "50px",
@@ -19,22 +19,21 @@ export default function Home() {
           gap: "50px",
         }}
       >
-        <ReviewCard
-          img="https://images6.alphacoders.com/714/thumbbig-714381.webp"
-          description={"Suicide squad - მიმოხილვა"}
-        />
-        <ReviewCard
-          img="https://images8.alphacoders.com/131/thumbbig-1318289.webp"
-          description={"The best movie ever. the best review"}
-        />
-        <ReviewCard
-          img="https://images3.alphacoders.com/993/thumbbig-99309.webp"
-          description={"Shutter iceland - შეშლილთა კუნძული (განხილვა)"}
-        />
-        <ReviewCard
-          img="https://images3.alphacoders.com/993/thumbbig-99309.webp"
-          description={"The best movie ever. the best review"}
-        />
+        <div>
+          <h2 className={styles.section_title}>Latest reviews</h2>
+          <div className={styles.latest_reviews_list}>
+            {reviews &&
+              reviews.map((review: any, index: number) => {
+                return (
+                  <ReviewCard
+                    key={review._id}
+                    img={review.poster}
+                    description={review.description}
+                  />
+                );
+              })}
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -1,3 +1,19 @@
 .main {
   min-height: 100vh;
 }
+
+.latest_reviews_list {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.section_title {
+  color: #fff;
+  /* Heading/h3/Bold */
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 116.667% */
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./HeroBanner.module.css";
 import Image from "next/image";
-const HeroBanner = () => {
+const HeroBanner = ({ img }: { img: string }) => {
   return (
     <section className={styles.hero_banner_cont}>
-      <img src="https://wallpapercave.com/wp/wp6446246.jpg" alt="banner" />
+      <img src={img} alt="banner" />
     </section>
   );
 };
