@@ -1,0 +1,67 @@
+.modalContent {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  border-top: 1px solid rgb(4, 127, 209);
+  background: rgba(1, 124, 161, 0.15); /* Adjust transparency here */
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-dark);
+  border-bottom-left-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.menuList span {
+  padding: 10px 0;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  color: white;
+}
+
+.menuList li:hover {
+  color: #007bff;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.068);
+  transition: all 0.3s;
+}
+.menuItem span a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s;
+}
+.menuItem:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.178);
+}
+.menuItem:hover > span a {
+  color: #286bb3;
+}
+.menuItem > .menuIcon {
+  transition: all 0.3s;
+}
+.menuItem:hover > .menuIcon {
+  scale: 1.1;
+}
+
+.closeButton {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+}

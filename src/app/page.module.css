@@ -4,9 +4,21 @@
 
 .latest_reviews_list {
   margin-top: 40px;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 30px; */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Three columns */
+  gap: 20px;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .latest_reviews_list {
+    grid-template-columns: repeat(
+      2,
+      minmax(250px, 1fr)
+    ); /* Two columns for smaller screens */
+  }
 }
 .section_title {
   color: #fff;
