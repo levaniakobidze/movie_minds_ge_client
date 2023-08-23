@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import SearchSvg from "../../assets/search-outline.svg";
@@ -15,6 +15,22 @@ const Header = () => {
   const [scroll, setScroll] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    const scrollHandler = () => {
+      // Your scroll handling code here
+      if (window.scrollY > 80) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
@@ -22,16 +38,6 @@ const Header = () => {
   const closeModal = () => {
     setShowModal(false);
   };
-
-  const scrollHandler = () => {
-    if (window.scrollY > 80) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
-
-  window.addEventListener("scroll", scrollHandler);
 
   return (
     <header
@@ -44,19 +50,19 @@ const Header = () => {
       </div>
       <ul className={styles.menu}>
         <li>
-          <HomeIcon className={styles.icon} />
+          {/* <HomeIcon className={styles.icon} /> */}
           <Link href={"/"}>მთავარი</Link>
         </li>
         <li>
-          <LocalMoviesIcon className={styles.icon} />
+          {/* <LocalMoviesIcon className={styles.icon} /> */}
           <Link href={"/"}>ფილმები</Link>
         </li>
         <li>
-          <ReviewsIcon className={styles.icon} />
+          {/* <ReviewsIcon className={styles.icon} /> */}
           <Link href={"/"}>განხილვები</Link>
         </li>
         <li>
-          <PermContactCalendarIcon className={styles.icon} />
+          {/* <PermContactCalendarIcon className={styles.icon} /> */}
           <Link href={"/"}>კონტაქტი</Link>
         </li>
       </ul>
