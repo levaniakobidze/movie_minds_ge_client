@@ -32,16 +32,18 @@ import Link from "next/link";
 import { BsClockHistory } from "react-icons/bs";
 import { MdOutlineCancel } from "react-icons/md";
 import { GiProgression } from "react-icons/gi";
+import AddPost from "../components/DashboardComponents/AddPost/AddPost";
+
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 const Dashboard = () => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("main");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigation = [
     {
-      name: "წიგნის დამატება",
-      href: "/admin/add_book",
+      name: "პოსტის დამატება",
+      href: "/dashboard/add_post",
       icon: AiOutlineDollar,
       current: true,
     },
@@ -73,8 +75,8 @@ const Dashboard = () => {
 
   const renderComponent = () => {
     switch (category) {
-      case "add_book":
-        return "s";
+      case "add_post":
+        return <AddPost />;
       default:
         break;
     }
