@@ -73,6 +73,7 @@ const Dashboard = () => {
     },
   ];
 
+  // Function that renders components dinamicaly
   const renderComponent = () => {
     switch (category) {
       case "add_post":
