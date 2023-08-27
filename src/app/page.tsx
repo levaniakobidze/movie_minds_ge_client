@@ -7,10 +7,9 @@ import { useAppSelector } from "./redux/hooks";
 
 export default function Home() {
   const { reviews } = useAppSelector((state: any) => state.reviews);
-  console.log(reviews);
   return (
     <main className={styles.main}>
-      <HeroBanner img="https://images3.alphacoders.com/993/thumbbig-99309.webp" />
+      <HeroBanner img="https://images8.alphacoders.com/131/1312070.jpg" />
       <div
         style={{
           marginTop: "50px",
