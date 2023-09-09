@@ -1,8 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
 import axios from "axios";
 
 const Login = () => {
+  const handleLogin = async () => {
+    try {
+      await axios.post("http://localhost:8000/api/v1/user/login", {
+        email: "levaniakobidze25@gmail.com",
+        password: "levani123",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <section className="gradient-form min-h-[110vh]  bg-neutral-200 dark:bg-gray-700">
@@ -63,6 +75,7 @@ const Login = () => {
 
                         <div className="mb-12 pb-1 pt-1 text-center">
                           <button
+                            onClick={handleLogin}
                             className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
                             type="button"
                             data-te-ripple-init
