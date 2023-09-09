@@ -21,10 +21,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <main className="bg_dark">
-            <div className="container">
-              <Header />
-              {children}
-            </div>
+            <Header />
+            <div className="container">{children}</div>
           </main>
         </Providers>
       </body>

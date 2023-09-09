@@ -17,7 +17,6 @@ const Header = () => {
 
   useEffect(() => {
     const scrollHandler = () => {
-      // Your scroll handling code here
       if (window.scrollY > 80) {
         setScroll(true);
       } else {
