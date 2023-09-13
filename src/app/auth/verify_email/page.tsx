@@ -2,15 +2,23 @@
 "use client";
 import React from "react";
 import axios from "axios";
+import { login } from "../../redux/slices/authSlice";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 
 // Test login function
-const Login = () => {
+const Verify_email = () => {
+  const dispatch = useAppDispatch();
   const handleLogin = async () => {
+    // dispatch(login());
+
     try {
-      await axios.post("http://localhost:8000/api/v1/user/login", {
-        email: "levaniakobidze25@gmail.com",
-        password: "levani123",
-      });
+      await axios.post(
+        "https://wild-pink-spider-gown.cyclic.app/api/v1/user/login",
+        {
+          email: "levaniakobidze25@gmail.com",
+          password: "levani123",
+        }
+      );
     } catch (error) {
       console.log(error);
     }
@@ -18,7 +26,7 @@ const Login = () => {
 
   return (
     <>
-      <section className="gradient-form min-h-[110vh]  bg-neutral-200 dark:bg-gray-700">
+      <section className="gradient-form min-h-[110vh] flex justify-center items-center  bg-neutral-200 dark:bg-gray-700">
         <div className="container h-full p-10">
           <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
             <div className="w-full">
@@ -55,7 +63,6 @@ const Login = () => {
                             ელ.ფოსტა
                           </label>
                         </div>
-
                         <div
                           className="relative mb-4"
                           data-te-input-wrapper-init
@@ -141,4 +148,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Verify_email;
