@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import styles from "./ProfileModal.module.css";
-////
 import CloseIcon from "@mui/icons-material/Close";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SettingsIcon from "@mui/icons-material/Settings";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Link from "next/link";
+import { useAppDispatch } from "@/redux/hooks";
+import { logout } from "@/redux/slices/authSlice";
 
 const ProfileModal = ({
   setShowModal,
@@ -15,6 +16,8 @@ const ProfileModal = ({
   setShowModal: any;
   showModal: boolean;
 }) => {
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     const handleOutsideClick = (e: any) => {
       if (showModal && e.target.alt !== "er Avatar") {
@@ -33,6 +36,10 @@ const ProfileModal = ({
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -70,7 +77,7 @@ const ProfileModal = ({
             </Link>
           </span>
         </div>
-        <div className={styles.menuItem}>
+        <div className={styles.menuItem} onClick={handleLogout}>
           <ExitToAppIcon className={styles.menuIcon} />
           <span onClick={closeModal}>გამოსვლა</span>
         </div>

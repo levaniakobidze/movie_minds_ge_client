@@ -32,7 +32,7 @@ import Link from "next/link";
 import { BsClockHistory } from "react-icons/bs";
 import { MdOutlineCancel } from "react-icons/md";
 import { GiProgression } from "react-icons/gi";
-import AddPost from "../components/DashboardComponents/AddPost/AddPost";
+import AddPost from "../../components/DashboardComponents/AddPost/AddPost";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");

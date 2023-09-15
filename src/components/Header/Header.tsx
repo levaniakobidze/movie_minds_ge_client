@@ -10,8 +10,12 @@ import LocalMoviesIcon from "@mui/icons-material/LocalMovies";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import ProfileModal from "../Modals/ProfileModal/ProfileModal";
-import { useAppSelector } from "@/app/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
+import { logout } from "@/redux/slices/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
+
 const Header = () => {
+  const dispatch = useAppDispatch();
   const [scroll, setScroll] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { isAuth } = useAppSelector((state) => state.auth);
@@ -81,15 +85,6 @@ const Header = () => {
         </label> */}
         </div>
         {isAuth ? (
-          <div className={styles.btn_cont}>
-            <Link href={"/auth/login"} className={styles.button_86}>
-              შესვლა
-            </Link>
-            <Link href={"/auth/register"} className={styles.button_86}>
-              რეგისტრაცია
-            </Link>
-          </div>
-        ) : (
           <div
             className={styles.profileCard}
             onClick={(e) => {
@@ -103,6 +98,15 @@ const Header = () => {
                 alt="User Avatar"
               />
             </div>
+          </div>
+        ) : (
+          <div className={styles.btn_cont}>
+            <Link href={"/auth/login"} className={styles.button_86}>
+              შესვლა
+            </Link>
+            <Link href={"/auth/register"} className={styles.button_86}>
+              რეგისტრაცია
+            </Link>
           </div>
         )}
         {showModal && (

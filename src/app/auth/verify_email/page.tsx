@@ -2,8 +2,8 @@
 "use client";
 import React from "react";
 import axios from "axios";
-import { login } from "../../redux/slices/authSlice";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { login } from "../../../redux/slices/authSlice";
+import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
 
 // Test login function
 const Verify_email = () => {

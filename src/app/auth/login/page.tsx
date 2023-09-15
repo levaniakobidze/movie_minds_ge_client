@@ -1,27 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { login } from "../../redux/slices/authSlice";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+import { login } from "../../../redux/slices/authSlice";
+import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
+import { useRouter } from "next/navigation";
 
 // Test login function
 const Login = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
-  const handleLogin = async () => {
-    // dispatch(login());
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    try {
-      await axios.post(
-        "https://wild-pink-spider-gown.cyclic.app/api/v1/user/login",
-        {
-          email: "levaniakobidze25@gmail.com",
-          password: "levani123",
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
+  const handleLogin = () => {
+    dispatch(login({ email, password })).then(() => router.push("/"));
   };
 
   return (
@@ -52,6 +45,8 @@ const Login = () => {
                         >
                           <input
                             type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             id="exampleFormControlInput1"
                             placeholder="Username"
@@ -70,6 +65,8 @@ const Login = () => {
                         >
                           <input
                             type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             id="exampleFormControlInput11"
                             placeholder="Password"

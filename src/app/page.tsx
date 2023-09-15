@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import HeroBanner from "./components/HeroBanner/HeroBanner";
-import ReviewCard from "./components/ReviewCard/ReviewCard";
-import { useAppSelector } from "./redux/hooks";
+import HeroBanner from "../components/HeroBanner/HeroBanner";
+import ReviewCard from "../components/ReviewCard/ReviewCard";
+import { useAppSelector } from "../redux/hooks";
 
 export default function Home() {
   const { reviews } = useAppSelector((state: any) => state.reviews);
