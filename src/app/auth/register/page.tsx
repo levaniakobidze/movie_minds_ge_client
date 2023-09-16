@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 // Test login function
-const Login = () => {
+const Register = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [email, setEmail] = useState("");
@@ -60,7 +60,30 @@ const Login = () => {
                         </h4>
                       </div>
                       <form>
-                        <p className="mb-4">შედით თქვენს ანგარიშში</p>
+                        <p className="mb-4">
+                          {" "}
+                          შეავსე მითითებული ველები და გაიარე რეგისტრაცია
+                        </p>
+                        <div
+                          className="relative mb-4"
+                          data-te-input-wrapper-init
+                        >
+                          <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                            id="exampleFormControlInput22"
+                            placeholder="Username"
+                          />
+                          <label
+                            htmlFor="exampleFormControlInput22"
+                            className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                          >
+                            Username
+                          </label>
+                        </div>
+
                         <div
                           className="relative mb-4"
                           data-te-input-wrapper-init
@@ -98,6 +121,25 @@ const Login = () => {
                             className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                           >
                             პაროლი
+                          </label>
+                        </div>
+                        <div
+                          className="relative mb-4"
+                          data-te-input-wrapper-init
+                        >
+                          <input
+                            type="password"
+                            // value={password}
+                            // onChange={(e) => setPassword(e.target.value)}
+                            className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                            id="exampleFormControlInput11"
+                            placeholder="Password"
+                          />
+                          <label
+                            htmlFor="exampleFormControlInput11"
+                            className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                          >
+                            გაიმეორე პაროლი
                           </label>
                         </div>
 
@@ -174,22 +216,24 @@ const Login = () => {
                                 ></path>
                               </svg>
                             ) : (
-                              "შესვლა"
+                              "რეგისტრაცია"
                             )}
                           </button>
 
-                          <a href="#!">დაგავიწყდა პაროლი?</a>
+                          <Link href={"/auth/forgot_password"}>
+                            დაგავიწყდა პაროლი?
+                          </Link>
                         </div>
 
                         <div className="flex items-center justify-between pb-6">
-                          <p className="mb-0 mr-2">არ გაქვს ანგარიში?</p>
+                          <p className="mb-0 mr-2">გაქვს ანგარიში?</p>
                           <button
                             type="button"
                             className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                             data-te-ripple-init
                             data-te-ripple-color="light"
                           >
-                            <Link href={"/auth/register"}>რეგისტრაცია</Link>
+                            <Link href={"/auth/login"}>შესვლა</Link>
                           </button>
                         </div>
                       </form>
@@ -234,4 +278,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

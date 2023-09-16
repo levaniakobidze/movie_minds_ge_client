@@ -30,26 +30,23 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    loginSuccess: (state, { payload }) => {
+      state.isAuth = true;
+      state.user = payload.user;
+    },
+    loginFailure: (state, { payload }) => {
+      state.isAuth = false;
+      state.user = [];
+      // state.error = payload;
+    },
     logout: (state) => {
       state.isAuth = false;
       state.token = "";
       state.user = [];
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(login.fulfilled, (state, action) => {
-      // Handle fulfilled state
-      state.isAuth = true;
-      state.user = action.payload.user;
-      // state.token = action.payload.token;
-      // state.userRole = action.payload.userRole;
-    });
-    builder.addCase(login.rejected, (state, action) => {
-      // Handle rejected state
-    });
-  },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, loginSuccess, loginFailure } = authSlice.actions;
 
 export default authSlice.reducer;

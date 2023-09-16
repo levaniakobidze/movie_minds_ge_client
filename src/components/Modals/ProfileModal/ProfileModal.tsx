@@ -8,6 +8,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Link from "next/link";
 import { useAppDispatch } from "@/redux/hooks";
 import { logout } from "@/redux/slices/authSlice";
+import { useRouter } from "next/navigation";
 
 const ProfileModal = ({
   setShowModal,
@@ -16,6 +17,7 @@ const ProfileModal = ({
   setShowModal: any;
   showModal: boolean;
 }) => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -40,6 +42,7 @@ const ProfileModal = ({
 
   const handleLogout = () => {
     dispatch(logout());
+    router.push("/auth/login");
   };
 
   return (

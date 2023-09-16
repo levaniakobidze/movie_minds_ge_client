@@ -31,7 +31,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import { GiProgression } from "react-icons/gi";
 import { useRouter } from "next/navigation";
 import { usePathname, useSearchParams, useParams } from "next/navigation";
-import AddPost from "@/app/components/DashboardComponents/AddPost/AddPost";
+import AddPost from "@/components/DashboardComponents/AddPost/AddPost";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
