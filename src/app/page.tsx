@@ -16,7 +16,6 @@ export default function Home() {
     "https://wallpaperaccess.com/full/1077197.jpg",
     "https://wallpaperaccess.com/full/1988347.jpg",
   ]);
-
   setTimeout(() => {
     const random = Math.floor(Math.random() * images.length);
     setImgindx(random);
