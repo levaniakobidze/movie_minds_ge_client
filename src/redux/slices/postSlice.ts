@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-let initialState = {
-  post: {},
-};
+let initialState = {};
 
 const postSlice = createSlice({
   name: "auth",

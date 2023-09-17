@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/DashboardComponents/AddPost/AddPost.jsx"
+    "src/components/DashboardComponents/AddPost/AddPost.jsx",
+    "src/components/DashboardComponents/AddPost/PostContent/PostContent.jsx"
   ],
   "exclude": ["node_modules"]
 }
