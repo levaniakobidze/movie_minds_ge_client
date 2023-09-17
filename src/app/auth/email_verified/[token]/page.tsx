@@ -17,7 +17,7 @@ const Email_verified = () => {
     const checkToken = async () => {
       axios
         .get(
-          `https://wild-pink-spider-gown.cyclic.app/api/v1/user/verify/${token}`
+          `https://wild-pink-spider-gown.cyclic.app/api/v1/auth/verify/${token}`
         )
         .then(() => {
           setVerified("verified");

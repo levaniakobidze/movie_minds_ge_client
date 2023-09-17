@@ -23,7 +23,7 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://wild-pink-spider-gown.cyclic.app/api/v1/user/login",
+        "https://wild-pink-spider-gown.cyclic.app/api/v1/auth/login",
         {
           email,
           password,
