@@ -7,7 +7,6 @@ import ErrorIcon from "@mui/icons-material/Error";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
 
-// Test login function
 const Email_verified = () => {
   const router = useRouter();
   const { token } = useParams();
